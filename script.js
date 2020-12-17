@@ -19,23 +19,43 @@ else {
 };
 
 //Modal win
-document.addEventListener('DOMContentLoaded', function() {});
+document.addEventListener('DOMContentLoaded', function() {
 
-const modal = document.getElementById('myModal');
-const btn = document.getElementById("myBtn");
-const span = document.getElementsByClassName("close")[0];
+    const  modalButtons = document.querySelectorAll('.js-open-modal'),
+           closeButtons = document.querySelector('.js-modal-close');
+    
+    
+    modalButtons.forEach(function(item){
+       
+       item.addEventListener('click', function(e) {
+          
+          e.preventDefault();
+          alert("click");
+ 
+         const modalId = this.getAttribute('data-modal'),
+              modalElem = document.querySelector('.modal[data-modal="' + modalId + '"]');
+          
+          modalElem.classList.add('active');
+ 
+       }); // end click
+    }); // end foreach
+ }); // end ready
 
-btn.onclick = function() {
-    modal.style.display = "block";
-  };
+// const modal = document.getElementById('myModal');
+// const btn = document.getElementById("myBtn");
+// const span = document.getElementsByClassName("close")[0];
 
-  span.onclick = function() {
-    modal.style.display = "none";
-  };
+// btn.onclick = function() {
+//     modal.style.display = "block";
+//   };
 
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  };
+//   span.onclick = function() {
+//     modal.style.display = "none";
+//   };
+
+//   window.onclick = function(event) {
+//     if (event.target == modal) {
+//       modal.style.display = "none";
+//     }
+//   };
 
