@@ -137,6 +137,7 @@ aside {
     float: right;
     box-sizing: border-box;
     padding-left: 10px;
+    z-index: 1;
 }
 
 aside > h3 > a {
@@ -175,3 +176,16 @@ footer {
     right: 3%;
     z-index: 3;
 }
+
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: absolute;
+    top: 100px;
+    left: 25%;
+
+  }
+
+  .close {
+    font-size:  30px;
+    font-weight:  bold;
+  }
