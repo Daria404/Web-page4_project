@@ -22,6 +22,7 @@ else {
 document.addEventListener('DOMContentLoaded', function() {
 
     const  modalButtons = document.querySelectorAll('.js-open-modal'),
+            overlay      = document.querySelector('.js-overlay-modal'),
            closeButtons = document.querySelector('.js-modal-close');
     
     
@@ -30,15 +31,34 @@ document.addEventListener('DOMContentLoaded', function() {
        item.addEventListener('click', function(e) {
           
           e.preventDefault();
-          alert("click");
  
          const modalId = this.getAttribute('data-modal'),
               modalElem = document.querySelector('.modal[data-modal="' + modalId + '"]');
-          
+
           modalElem.classList.add('active');
+          overlay.classList.add('active');
+
  
        }); // end click
+
     }); // end foreach
+
+    document.body.addEventListener('keyup', function (e) {
+        const key = e.keyCode;
+
+        if (key == 27) {
+
+            document.querySelector('.modal.active').classList.remove('active');
+            document.querySelector('.overlay').classList.remove('active');
+        }
+
+    }, false);
+
+    overlay.addEventListener('click', function() {
+    document.querySelector('.modal.active').classList.remove('active');
+    document.querySelector('.overlay').classList.remove('active');
+        // this.classList.remove('active');
+    });
  }); // end ready
 
 // const modal = document.getElementById('myModal');
