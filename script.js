@@ -25,7 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
             overlay      = document.querySelector('.js-overlay-modal'),
            closeButtons = document.querySelector('.js-modal-close');
     
-    
+           alert(overlay);
+
     modalButtons.forEach(function(item){
        
        item.addEventListener('click', function(e) {
@@ -37,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
           modalElem.classList.add('active');
           overlay.classList.add('active');
+          console.log(overlay.classList);
 
  
        }); // end click
@@ -44,9 +46,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }); // end foreach
 
     document.body.addEventListener('keyup', function (e) {
-        const key = e.keyCode;
+        const key = e.key;
+        
 
-        if (key == 27) {
+        if (key == "Escape") {
 
             document.querySelector('.modal.active').classList.remove('active');
             document.querySelector('.overlay').classList.remove('active');
