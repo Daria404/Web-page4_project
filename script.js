@@ -23,9 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const  modalButtons = document.querySelectorAll('.js-open-modal'),
             overlay      = document.querySelector('.js-overlay-modal'),
-           closeButtons = document.querySelector('.js-modal-close');
-    
-           alert(overlay);
+           closeButtons = document.querySelectorAll('.js-modal-close');
+
 
     modalButtons.forEach(function(item){
        
@@ -38,12 +37,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
           modalElem.classList.add('active');
           overlay.classList.add('active');
-          console.log(overlay.classList);
+          console.log(closeButtons.classList);
 
  
        }); // end click
 
     }); // end foreach
+
+    closeButtons.forEach(function(item) {
+
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            document.querySelector('.modal.active').classList.remove('active');
+            document.querySelector('.overlay').classList.remove('active');
+        });
+     
+     }); // end foreach
 
     document.body.addEventListener('keyup', function (e) {
         const key = e.key;
