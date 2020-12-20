@@ -4,6 +4,7 @@ body {
     margin-right: 0px;
     margin-left: 0px;
     padding: 0px;
+    
 }
 
 #wrapper {
@@ -22,7 +23,7 @@ header {
 
 header #headerbackgroundTop {
     background: white;
-    opacity: 90%;
+    opacity: 0.9;
     height: 50px;
     width: 100%;
     top: 20px;
@@ -117,16 +118,16 @@ h1, h3 {
     font-weight: 500;
 }
 
-
-#column > a {
-    display: block;  
+.columnLink {
     text-align: right;
+}
+.columnLink > a {
     color: #232b31;
     font-family: Georgia;
     font-style: oblique;
     text-decoration: underline;
 }
-#column > a:hover {
+.columnLink > a:hover {
     text-decoration: none;
 }
 
@@ -162,10 +163,11 @@ h3 {
 footer {
     width: 100%;
     background: white;
-    opacity: 90%;
+    opacity: 0.9;
     height: 250px;
     top: 1170px;
     position: absolute;
+    z-index:1;
 }
 
 #upbutton {
@@ -176,19 +178,6 @@ footer {
     right: 3%;
     z-index: 3;
 }
-
-/* .modal {
-    display: none; 
-    position: absolute;
-    top: 100px;
-    left: 25%;
-
-  }
-
-  .close {
-    font-size:  30px;
-    font-weight:  bold;
-  } */
 
   .modal {
    
